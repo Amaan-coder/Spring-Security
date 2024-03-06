@@ -8,4 +8,6 @@ import com.tcser.springsecurity.dto.UserDto;
 @Repository
 public interface UserDao extends JpaRepository<UserDto, Integer>{
 
+	UserDto findByEmail(String username);
+
 }

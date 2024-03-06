@@ -1,6 +1,8 @@
 package com.tcser.springsecurity.dto;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +19,7 @@ public class UserDto {
 	private String lastName;
 	private String email;
 	private String password;
+	@Enumerated(EnumType.STRING)
 	private roleDto role;
 	
 	

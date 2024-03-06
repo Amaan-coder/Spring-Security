@@ -6,10 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tcser.springsecurity.dto.UserDto;
+import com.tcser.springsecurity.dto.roleDto;
 import com.tcser.springsecurity.service.UserService;
 
 @RestController
@@ -48,6 +51,12 @@ public class UserController {
 	@GetMapping("/re")
 	public String hello() {
 		return "hello";
+	}
+	
+	@PostMapping("/adduser")
+	public UserDto addUser(@RequestBody UserDto dto){
+		
+		return service.addUser(dto);
 	}
 	
 }
